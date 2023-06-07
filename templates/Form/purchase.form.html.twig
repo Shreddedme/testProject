@@ -1,0 +1,34 @@
+<html lang="">
+<head>
+
+
+</head>
+<body>
+
+<form id="purchase-form" action="{{ path('app_purchase') }}" method="POST">
+    <div>
+        <label for="product-input">Product:</label>
+        <input type="text" id="product-input" name="productId" required>
+    </div>
+    <div>
+        <label for="tax-number-input">Tax Number:</label>
+        <input type="text" id="tax-number-input" name="taxNumber" pattern="^(DE\d{9}|IT\d{11}|GR\d{9}|FR[A-Z]{2}\d{9})$" required>
+    </div>
+    <div>
+        <label for="coupon-code-input">Coupon Code:</label>
+        <input type="text" id="coupon-code-input" name="couponCode">
+    </div>
+    <div>
+        <label for="payment-processor-input">Payment Processor:</label>
+        <select id="payment-processor-input" name="paymentProcessor">
+            <option value="paypal">PayPal</option>
+            <option value="stripe">Stripe</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">Make Purchase</button>
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html lang="">
+<head>
+
+
+</head>
+<body>
+
+<form id="calculate-price-form" action="{{ path('app_calculate_price') }}" method="GET">
+    <div>
+        <label for="product-input">Product:</label>
+        <input type="text" id="product-input" name="productId" required>
+    </div>
+    <div>
+        <label for="tax-number-input">Tax Number:</label>
+        <input type="text" id="tax-number-input" name="taxNumber" pattern="^(DE\d{9}|IT\d{11}|GR\d{9}|FR[A-Z]{2}\d{9})$" required>
+    </div>
+    <div>
+        <label for="coupon-code-input">Coupon Code:</label>
+        <input type="text" id="coupon-code-input" name="couponCode">
+    </div>
+    <div>
+        <button type="submit">Calculate Price</button>
+    </div>
+</form>
+
+</body>
+</html>

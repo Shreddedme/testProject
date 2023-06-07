@@ -19,6 +19,12 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+    App\TestProject\Application\Service\PurchaseService:
+        arguments:
+            $orderService: '@App\TestProject\Application\Service\OrderService'
+            $paymentProcessors:
+                - '@App\TestProject\Infrastructure\Payment\PaypalPaymentProcessorDecorator'
+                - '@App\TestProject\Infrastructure\Payment\StripePaymentProcessorDecorator'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
